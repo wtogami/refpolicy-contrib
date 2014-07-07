@@ -10,4 +10,6 @@
 /var/log/couchdb(/.*)?			gen_context(system_u:object_r:couchdb_log_t,s0)
 /var/run/couchdb(/.*)?			gen_context(system_u:object_r:couchdb_var_run_t,s0)
 
-/usr/lib/erlang/erts-.*/bin/erl	--	gen_context(system_u:object_r:bin_t,s0)
+# Everything in /usr/lib/erlang/erts-.*/bin/ must be bin_t
+# This belongs in the core policies
+/usr/lib/erlang/erts-.*/bin(/.*)?	--	gen_context(system_u:object_r:bin_t,s0)
