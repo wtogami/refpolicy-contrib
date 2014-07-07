@@ -45,6 +45,9 @@ allow couchdb_t self:tcp_socket { accept listen };
 allow couchdb_t couchdb_conf_t:dir list_dir_perms;
 allow couchdb_t couchdb_conf_t:file read_file_perms;
 
+# couchdb can write to its own local.ini
+allow couchdb_t couchdb_conf_t:file write;
+
 can_exec(couchdb_t, couchdb_exec_t)
 
 domtrans_pattern(couchdb_t, couchdb_js_exec_t, couchdb_js_t)
