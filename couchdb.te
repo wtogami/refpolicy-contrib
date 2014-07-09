@@ -39,6 +39,7 @@ init_daemon_run_dir(couchdb_var_run_t, "couchdb")
 
 allow couchdb_t self:process { getsched setsched signal signull sigkill };
 allow couchdb_t self:fifo_file rw_fifo_file_perms;
+allow couchdb_t self:unix_dgram_socket create;
 allow couchdb_t self:unix_stream_socket create_stream_socket_perms;
 allow couchdb_t self:tcp_socket { accept listen };
 
