@@ -98,7 +98,6 @@ fs_getattr_all_dirs(couchdb_t)
 files_getattr_all_mountpoints(couchdb_t)
 files_search_all_mountpoints(couchdb_t)
 # These were previously in this policy, but unclear if they are still needed?
-fs_getattr_xattr_fs(couchdb_t)
 files_getattr_lost_found_dirs(couchdb_t)
 files_list_var(couchdb_t)
 
